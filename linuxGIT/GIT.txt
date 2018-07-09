@@ -1,0 +1,58 @@
+1.homestead
+让我们开始启动 Homestead：
+
+cd ~/Homestead && vagrant up
+
+SSH 登录 Homestead 虚拟机中
+
+cd ~/Homestead && vagrant provision && vagrant reload
+
+exit 可以退出
+2.前端
+npm run watch-poll
+
+3.git
+git config --global user.name "Your Name"
+git config --global user.email your@example.com
+
+git config --global push.default simple
+此设置是 Git 命令 push 的默认模式为 simple，当我们执行 git push 没有指定分支时，自动使用当前分支，而不是报错。
+
+查看当前用户（global）配置
+git config --global  --list
+ 
+查看当前仓库配置信息
+git config --local  --list
+
+git checkout -f 的作用是将在暂存区的更改文件进行强制撤销。
+
+git remote add origin git@github.com:<username>/sample.git
+
+git push -u origin master
+
+合并
+git merge fake-branch
+删除
+git branch -d fake-branch  
+
+git checkout master
+创建
+$ git checkout -b static-pages
+
+
+将 Git 切换到 master 分支，并合并 static-pages 分支上的修改：
+$ git checkout master
+$ git merge static-pages
+最后将代码推送到 GitHub
+$ git push                     # 推送到 Github 上
+
+放弃本地修改 更新远程git代码
+git fetch --all
+git reset --hard origin/master
+git pull
+
+3.laravel
+最后让我们对数据库进行重置和填充。
+$ php artisan migrate:refresh --seed
+
+composer dump-autoload

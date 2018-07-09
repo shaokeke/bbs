@@ -1,0 +1,62 @@
+ll 查看权限
+ls -a 查看隐藏文件
+
+
+权限数字表示:
+
+r(read) ---------- 4
+
+w(write) --------- 2
+
+x(execute) ---------- 1
+
+rwxrw-r--
+
+7    6   4
+
+三个一组,rwx权限分别对应421相加得7,rw-对应42相加,r--对应4
+
+修改文件权限
+chmod -R 755 文件夹  ( 755 所有者rwx,所属组r-x,其他人r-x)
+
+改变拥有者和群组
+chown -R www:www 文件夹
+
+xshell
+ctrl s 假死 ctrl q退出
+
+
+nginx 平滑重启
+通过以下命令检查配置文件是否正确
+
+/user/local/nginx/sbin/nginx –t –c
+
+/user/local/nginx/conf/nginx.conf
+
+如果配置文件正确，将提示以下两行信息
+
+The configurationfile /user/local/webserver/nginx/conf/nginx.conf syntax is ok
+
+Configurationfile /user/local/webserver/nginx/conf/nginx.conf test is successful
+
+方法一
+/usr/local/nginx/sbin/nginx -s reload
+
+方法二
+ps -ef|grep nginx
+kill -HUP master进程号
+
+
+重命名
+mv abc.txt 1234.txt
+
+假设复制源目录 为 dir1 ,目标目录为dir2。怎样才能将dir1下所有文件复制到dir2下了
+如果dir2目录不存在，则可以直接使用
+cp -r dir1 dir2
+即可。
+如果dir2目录已存在，则需要使用
+cp -r dir1/. dir2
+
+VIM
+全部删除：按esc后，然后dG
+全部复制：按esc后，然后ggyG
