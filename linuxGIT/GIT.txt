@@ -47,9 +47,7 @@ $ git merge static-pages
 $ git push                     # 推送到 Github 上
 
 放弃本地修改 更新远程git代码
-git fetch --all
-git reset --hard origin/master
-git pull
+git fetch --all && git reset --hard origin/master && git pull
 
 3.laravel
 最后让我们对数据库进行重置和填充。
