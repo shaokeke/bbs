@@ -46,6 +46,10 @@ Configurationfile /user/local/webserver/nginx/conf/nginx.conf test is successful
 ps -ef|grep nginx
 kill -HUP master进程号
 
+php-fpm
+ps aux|grep php-fpm 查看master进程号
+root     42891  0.0  0.1 182796  1220 ?        Ss   4月18   0:19 php-fpm: master process
+kill -USR2 42891
 
 重命名
 mv abc.txt 1234.txt
